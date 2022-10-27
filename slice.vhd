@@ -37,9 +37,9 @@ entity slice is
     Q : out std_logic
   );
   
-   signal Qint : std_logic;
-   signal lo : std_logic;
-   signal Cin : std_logic;
+   signal Qint : std_logic := '0';
+   signal lo : std_logic := '0';
+   signal Cin : std_logic := '0';
 end slice;
 
 
@@ -49,10 +49,10 @@ begin
    lo <= ((A xor B) and Cin) or (A and B);
 
     
-   process(clk, Cin, Qint) is
+   process(clk, Cin, Qint, lo) is
    begin
-        if rising_edge(clk) then
-           Cin <= lo;
+        if falling_edge(clk) then
+           Cin <=lo;
            Q <= Qint;
         end if;
    end process;

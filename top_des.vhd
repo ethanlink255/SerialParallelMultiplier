@@ -33,53 +33,53 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top_des is
     generic(
-        w : integer := 3
+        w : integer := 12;
+        t : integer := 4
     );
     
     Port(
-        A, enabled, clk, B, reset: in std_logic;
+        A, enabled, clk, B: in std_logic;
+        TEST : out std_logic_vector((t - 1) downto 0);
         C : out std_logic 
     );
     
-    signal Apar_int : std_logic_vector((w-1) downto 0);
+    signal Apar_int : std_logic_vector((w) downto 0);
+    signal Qpar_int : std_logic_vector((w) downto 0);
 end top_des;
 
 architecture top_behav of top_des is
-    component adderchain
-    generic( 
-        w : integer := 3
-    );
+    component wilkes_sliced
     Port ( 
-        A : std_logic_vector((w-1) downto 0);
-        B, reset, clk: std_logic;
-        C : out std_logic
+        Ap, B, C, enabled, clk : in std_logic;
+        An, Q : out std_logic
     );
     end component;
-    
-    component shiftreg
-    generic (
-        w : integer := 3);
-    Port ( 
-        A, enabled, clk : in std_logic;
-        Apar : out std_logic_vector((w - 1) downto 0)
-    );
-    end component;
-
 begin
+    Apar_int(0) <= A;
+    Qpar_int(0) <= '0'; 
     
-    sr : shiftreg port map(
-        A => A,
-        enabled => enabled,
-        clk => clk,
-        Apar => Apar_int
-    );
+     
+    slice_gen : for i in 1 to (w) generate
+    begin
+        ws : wilkes_sliced port map(
+            Ap => Apar_int(i - 1),
+            An => Apar_int(i),
+            C => Qpar_int(i - 1),
+            enabled => enabled,
+            clk => clk, 
+            B => B,
+            Q => Qpar_int(i)
+        );
+    end generate slice_gen;
     
-    ac : adderchain port map(
-        A => Apar_int,
-        B => B,
-        clk => clk,
-        reset => reset,
-        C => C
-    );
+    -- TEST(0) <= Qpar_int(0);
+    t_gen : for i in 0 to (t - 1) generate
+    begin
+        TEST(i) <= Qpar_int((i*t)); 
+    end generate t_gen;
+    
+    
+    
+    C <= Qpar_int(w);
 
 end top_behav;

@@ -32,7 +32,8 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity shiftreg is
-  generic (
+  generic (s
+  
     w : integer := 10);
   Port ( 
     A, enabled, clk : in std_logic;
