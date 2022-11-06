@@ -1,0 +1,126 @@
+magic
+tech scmos
+timestamp 1667706505
+<< fence >>
+rect -15 127 496 131
+<< metal1 >>
+rect -15 123 -12 127
+rect -8 123 496 127
+rect -15 116 154 120
+rect 158 116 496 120
+rect -15 109 178 113
+rect 198 109 386 113
+rect 494 109 496 113
+rect -15 100 -12 106
+rect 490 100 496 106
+rect -8 46 -4 50
+rect 0 46 1 50
+rect 24 47 28 50
+rect 42 49 46 50
+rect 42 45 62 49
+rect 170 46 186 50
+rect 293 45 310 49
+rect 482 46 490 50
+rect 28 36 36 40
+rect 139 36 148 40
+rect 290 36 294 40
+rect -15 0 -12 6
+rect 490 0 496 6
+rect -6 -7 24 -3
+rect 286 -7 426 -3
+rect -6 -10 -2 -7
+rect -15 -14 -2 -10
+rect 5 -14 138 -10
+rect 142 -14 496 -10
+rect -15 -21 58 -17
+rect 62 -21 306 -17
+rect 310 -21 402 -17
+rect 406 -21 496 -17
+<< m2contact >>
+rect -12 123 -8 127
+rect 154 116 158 120
+rect 178 109 182 113
+rect 194 109 198 113
+rect 386 109 390 113
+rect 490 109 494 113
+rect -12 46 -8 50
+rect 1 46 5 50
+rect 24 43 28 47
+rect 154 46 158 50
+rect 194 46 198 50
+rect 386 46 390 50
+rect 426 46 430 50
+rect 490 46 494 50
+rect 178 36 182 40
+rect 58 32 62 36
+rect 138 31 142 35
+rect 306 32 310 36
+rect 402 32 406 36
+rect 282 26 286 30
+rect 24 -7 28 -3
+rect 282 -7 286 -3
+rect 426 -7 430 -3
+rect 1 -14 5 -10
+rect 138 -14 142 -10
+rect 58 -21 62 -17
+rect 306 -21 310 -17
+rect 402 -21 406 -17
+<< metal2 >>
+rect -12 50 -8 123
+rect 154 50 158 116
+rect 1 -10 5 46
+rect 24 -3 28 43
+rect 178 40 182 109
+rect 194 50 198 109
+rect 386 50 390 109
+rect 490 50 494 109
+rect 58 -17 62 32
+rect 138 -10 142 31
+rect 282 -3 286 26
+rect 306 -17 310 32
+rect 402 -17 406 32
+rect 426 -3 430 46
+use DFFNEGX1  DFFNEGX1_2 ~/Documents/Project/StandardCells/IIT_LIB_Student-Version2/Cells/SRC
+timestamp 1666914605
+transform 1 0 392 0 1 3
+box -8 -3 104 105
+use DFFNEGX1  DFFNEGX1_1
+timestamp 1666914605
+transform 1 0 296 0 1 3
+box -8 -3 104 105
+use FAX1  FAX1_0 ~/Documents/Project/StandardCells/IIT_LIB_Student-Version2/Cells/SRC
+timestamp 1666914605
+transform 1 0 176 0 1 3
+box -5 -3 126 105
+use AND2X2  AND2X2_0
+timestamp 1667532034
+transform 1 0 144 0 1 3
+box -8 -3 40 105
+use DFFNEGX1  DFFNEGX1_0
+timestamp 1666914605
+transform 1 0 48 0 1 3
+box -8 -3 104 105
+use INVX2  INVX2_0
+timestamp 1667532034
+transform 1 0 32 0 1 3
+box -9 -3 26 105
+use MUX2X1  MUX2X1_0 ~/Documents/Project/StandardCells/IIT_LIB_Student-Version2/Cells/SRC
+timestamp 1666914605
+transform 1 0 -10 0 1 3
+box -5 -3 53 105
+<< labels >>
+rlabel metal1 247 110 250 113 1 FF2Q
+rlabel metal1 335 -7 338 -4 1 Ys
+rlabel metal1 -15 109 -11 113 0 Cin
+rlabel metal1 -15 116 -11 120 0 B
+rlabel metal1 -8 46 -4 50 0 En
+rlabel metal1 0 46 1 50 1 FF1Q
+rlabel metal1 -15 2 -12 5 3 Gnd
+rlabel metal1 -15 100 -12 103 3 Vdd
+rlabel metal1 24 46 28 50 0 A
+rlabel metal1 42 46 46 50 0 MuxTrue
+rlabel metal1 -15 -21 -11 -17 0 clk
+rlabel metal1 170 46 174 50 0 AndOut
+rlabel metal1 290 36 294 40 0 Yc
+rlabel metal1 482 46 486 50 0 Cout
+<< end >>

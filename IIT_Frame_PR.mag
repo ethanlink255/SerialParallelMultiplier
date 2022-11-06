@@ -1,0 +1,29 @@
+magic
+tech scmos
+timestamp 1667707124
+use Slice  Slice_0
+array 0 4 511 0 16 152
+timestamp 1667706505
+transform 1 0 1264 0 1 1229
+box -15 -21 496 131
+use IIT_Frame  IIT_Frame_0
+timestamp 1017811936
+transform 1 0 2503 0 1 2500
+box -2499 -2500 2501 2500
+use polyring  polyring_1
+timestamp 1072202993
+transform 0 1 1054 -1 0 1200
+box 0 0 150 2900
+use polyring  polyring_2
+timestamp 1072202993
+transform 1 0 3804 0 1 1050
+box 0 0 150 2900
+use polyring  polyring_0
+timestamp 1072202993
+transform 1 0 1054 0 1 1050
+box 0 0 150 2900
+use polyring  polyring_3
+timestamp 1072202993
+transform 0 1 1054 -1 0 3950
+box 0 0 150 2900
+<< end >>
